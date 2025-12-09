@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tienda Demo</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header class="site-header">
+    <h1>Tienda Demo</h1>
+    <nav class="main-nav">
+      <button id="btnCarrito">🛒 Carrito (<span id="contador">0</span>)</button>
+    </nav>
+  </header>
+
+  <!-- Filtros de productos -->
+  <section class="filtros">
+    <button class="filtro" data-cat="todo">Todo</button>
+    <button class="filtro" data-cat="ropa">Ropa</button>
+    <button class="filtro" data-cat="electronica">Electrónica</button>
+    <button class="filtro" data-cat="libros">Libros</button>
+  </section>
+
+  <!-- Productos -->
+  <main id="productos" class="productos-grid"></main>
+
+  <!-- Modal del carrito -->
+  <div class="modal" id="modalCarrito">
+    <div class="modal-content">
+      <h2>°. ⋆ Carrito ⋆. °</h2>
+      <ul id="listaCarrito"></ul>
+      <p id="total"></p>
+      <button id="btnPagar">Proceder al Pago</button>
+      <button class="cerrar">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Modal de pago -->
+  <div id="modalPago" class="modal">
+    <div class="modal-content">
+      <span class="cerrar" onclick="cerrarModal('modalPago')">&times;</span>
+      <h2>Finalizar compra</h2>
+      <p id="resumenCompra"></p>
+      <button onclick="confirmarPago()">Confirmar pago</button>
+    </div>
+  </div>
+
+  <!-- Modal de éxito -->
+  <div id="modalExito" class="modal">
+    <div class="modal-content">
+      <h2>¡Compra realizada con éxito! 🎉</h2>
+      <p>Gracias por tu compra. Tu pedido está siendo procesado.</p>
+      <button onclick="cerrarModal('modalExito')">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>
+

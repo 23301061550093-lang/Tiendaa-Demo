@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*colores para usarlos en todo el dseño*/
+:root{
+  --rosa-pastel: #ffb7e5;
+  --rosa-claro: #ffd6f0;
+  --rosa-fuerte: #ff6fb8;
+  --negro: #000;
+  --gris-oscuro: #1c1c1c;
+  --blanco: #ffffff;
+}
+
+/*estilos generales del sitio*/
+html, body {
+  height: 100%;                     
+  font-family: "Inter", Arial, sans-serif; /*letra*/
+  background: linear-gradient(120deg, black, #faaeda, black);   /*fondo degradado*/
+  color: #111;                      /*color del texto*/
+}
+
+/*encabezado de la página*/
+.site-header{
+  background: linear-gradient(180deg, #000, #2b2b2b); /*fondo*/
+  color: var(--rosa-pastel);
+  padding: 16px 20px;
+  display: flex;                  
+  align-items: center;              
+  justify-content: space-between;   /*separa título y botones*/
+  gap: 12px;
+  box-shadow: 0 6px 18px rgba(255, 183, 229, 0.2); /*sombra*/
+}
+
+/*títuulo del encabezado*/
+.site-header h1{
+  font-size: 22px;
+  color: var(--rosa-pastel);
+  letter-spacing: 0.6px;
+}
+
+/*botones del menú principal*/
+.main-nav button{
+  background: var(--rosa-fuerte);
+  color: var(--blanco);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: 0.2s;                /*animación suave*/
+}
+
+/*efecto al pasar el mouse por los botones*/
+.main-nav button:hover{
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+}
+
+/*contenedor de filtros*/
+.filtros{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  padding:12px;
+  background: #ffe1f3;
+  border-bottom: 2px solid var(--rosa-pastel);
+}
+
+/*botón individual de filtro*/
+.filtro{
+  background: var(--negro);
+  color: var(--rosa-pastel);
+  padding:8px 12px;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
+  transition: 0.2s;
+}
+
+/*efecto hover en filtros*/
+.filtro:hover{
+  opacity:0.85;
+  transform: translateY(-2px);
+}
+
+/*cuadrícula de productos*/
+.productos-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+  gap:20px;
+  padding:22px;
+}
+
+/*tarjeta de cada producto*/
+.card{
+  background: var(--blanco);
+  border-radius:14px;
+  padding:16px;
+  border: 2px solid var(--rosa-pastel);
+  box-shadow: 0 8px 25px rgba(255, 150, 210, 0.25);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  transition: 0.2s;
+}
+
+/*efecto hover en la tarjeta*/
+.card:hover{
+  transform: translateY(-4px);
+}
+
+/* Imagen del producto */
+.card img{
+  width:100%;
+  height:150px;
+  object-fit:cover;               
+  border-radius:10px;
+}
+
+/*nombre del producto*/
+.card h3{
+  font-size:17px;
+  color: #000;
+}
+
+/*precio del producto*/
+.card p{
+  font-weight:700;
+  color: #333;
+}
+
+/*botón dentro de la tarjeta (agregar al carrito)*/
+.card button{
+  margin-top:auto;                /* Empuja el botón al fondo */
+  background: linear-gradient(135deg, #000, #2b2b2b);
+  color: var(--rosa-pastel);
+  border:none;
+  padding:10px;
+  border-radius:10px;
+  cursor:pointer;
+  transition: 0.2s;
+}
+
+/*efeecto hover del botón*/
+.card button:hover{
+  background: #000;
+  transform: translateY(-2px);
+}
+
+/*fondo del modal (ventana emergente)*/
+.modal{
+  position:fixed;
+  inset:0;                        
+  display:none;                   
+  background: rgba(0,0,0,0.6);    
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+
+/*contenido del modal*/
+.modal .modal-content{
+  width:100%;
+  max-width:420px;
+  background: var(--blanco);
+  border-radius:14px;
+  border: 2px solid var(--rosa-pastel);
+  padding:20px;
+  box-shadow:0 10px 30px rgba(255, 100, 200, 0.3);
+}
+
+/*botón para cerrar el modal*/
+.cerrar{
+  float: right;
+  font-size: 25px;
+  cursor: pointer;
+  color: var(--rosa-fuerte);
+}
+
+/*efecto hover del botón cerrarr*/
+.cerrar:hover{
+  color: var(--negro);
+}
+
+/*botón para eliminar productos del carrito*/
+#listaCarrito button {
+  margin-left: 6px;
+  background: rgb(212, 115, 134);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 12px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/*hover del botón eliminar*/
+#listaCarrito button:hover {
+  opacity: 0.85;
+}
